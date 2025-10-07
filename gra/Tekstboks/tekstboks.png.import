@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bei3khfeiufnt"
-path="res://.godot/imported/soul.png-a7dc2477612f799cc6be0fb0627ed5e2.ctex"
+uid="uid://bktwwp8d85d3f"
+path="res://.godot/imported/tekstboks.png-0e7898432914e4faf2d69ebfb244630d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://soul.png"
-dest_files=["res://.godot/imported/soul.png-a7dc2477612f799cc6be0fb0627ed5e2.ctex"]
+source_file="res://Tekstboks/tekstboks.png"
+dest_files=["res://.godot/imported/tekstboks.png-0e7898432914e4faf2d69ebfb244630d.ctex"]
 
 [params]
 

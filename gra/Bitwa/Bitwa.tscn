@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkagw6072xdje"]
+
+[ext_resource type="Script" uid="uid://pyg7j862q7rl" path="res://Bitwa/bitwa.gd" id="1_sr88k"]
+[ext_resource type="PackedScene" uid="uid://dcjbdyorg0byp" path="res://Tekstboks/tekstboks.tscn" id="2_bykv2"]
+
+[node name="Bitwa" type="Node2D"]
+script = ExtResource("1_sr88k")
+
+[node name="Tekstboks" parent="." instance=ExtResource("2_bykv2")]
