@@ -22,3 +22,13 @@ position = Vector2(479, 401)
 scale = Vector2(1.0285326, 0.25977653)
 texture = ExtResource("2_xcr7t")
 script = ExtResource("3_2htrc")
+
+[node name="ButtonBitwaTest" type="Button" parent="."]
+layout_mode = 0
+offset_left = 980.0
+offset_top = 552.0
+offset_right = 1069.0
+offset_bottom = 583.0
+text = "Bitwa Test"
+
+[connection signal="pressed" from="ButtonBitwaTest" to="243e6332Ee1a97Bfff960f2866e6119d" method="_on_button_bitwa_test_pressed"]

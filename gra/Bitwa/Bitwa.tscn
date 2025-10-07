@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkagw6072xdje"]
+[gd_scene load_steps=4 format=3 uid="uid://bkagw6072xdje"]
 
 [ext_resource type="Script" uid="uid://pyg7j862q7rl" path="res://Bitwa/bitwa.gd" id="1_sr88k"]
 [ext_resource type="PackedScene" uid="uid://dcjbdyorg0byp" path="res://Tekstboks/tekstboks.tscn" id="2_bykv2"]
+[ext_resource type="PackedScene" uid="uid://v513r82dgxxb" path="res://Bitwa/dusza.tscn" id="3_hwoyi"]
 
 [node name="Bitwa" type="Node2D"]
 script = ExtResource("1_sr88k")
 
 [node name="Tekstboks" parent="." instance=ExtResource("2_bykv2")]
+
+[node name="Dusza" parent="." instance=ExtResource("3_hwoyi")]
+position = Vector2(560, 308)
