@@ -1,12 +1,14 @@
 extends Control
 
 signal tekstboks_koniec
+signal tekstboks_schowany
 
 var tlo 
 var animator: AnimationPlayer
 var tekstboks: RichTextLabel
 
 var pos
+var maxpos
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,12 +17,13 @@ func _ready():
 	tekstboks = get_node("tlo/Tekst")
 	
 	pos = 0
-	
-	self.tekstboks_koniec.connect(_on_tekstboks_koniec)
+	maxpos = 0
 	
 	self.visible = false
-	
-	pokazTekst("Sans undertejl\ndedededet dundundududu.", "BIG SMOKE: ")
+
+func odlaczOdAnimatora():
+	for c in animator.animation_finished.get_connections():
+		animator.animation_finished.disconnect(c.callable)
 
 func pokazTekst(tekst: String = 'Tekstbox', przedrostek: String = "", opoznienie: float = 0.05):
 	var callback = func(__): napiszTekst(tekst, przedrostek, opoznienie)
@@ -29,10 +32,25 @@ func pokazTekst(tekst: String = 'Tekstbox', przedrostek: String = "", opoznienie
 	
 	animator.stop(true)
 	animator.play("tekstboks_pokaz")
+	odlaczOdAnimatora()
+	animator.animation_finished.connect(callback.call)
+
+func dokonczTekst():
+	pos = maxpos
+
+func schowajTekst():
+	var callback = func(__): self.emit_signal("tekstboks_schowany")
+	
+	dokonczTekst()
+	
+	animator.stop(true)
+	animator.play("tekstboks_schowaj")
+	odlaczOdAnimatora()
 	animator.animation_finished.connect(callback.call)
 
 func napiszTekst(tekst: String, przedrostek: String = "", opoznienie: float = 0.05):
 	pos = 0
+	maxpos = tekst.length()
 	tekstboks.text = przedrostek
 	
 	var timer = Timer.new()
@@ -43,7 +61,7 @@ func napiszTekst(tekst: String, przedrostek: String = "", opoznienie: float = 0.
 		
 		tekstboks.text = przedrostek + tekst.substr(0, pos)
 		
-		if pos < tekst.length():
+		if pos < maxpos:
 			timer.start()
 		else:
 			timer.queue_free()
@@ -54,10 +72,3 @@ func napiszTekst(tekst: String, przedrostek: String = "", opoznienie: float = 0.
 	timer.timeout.connect(callback.call)
 	
 	callback.call()
-
-func _on_tekstboks_koniec():
-	print("Koniec tekstu")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
