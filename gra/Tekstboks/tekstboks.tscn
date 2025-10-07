@@ -1,14 +1,90 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcjbdyorg0byp"]
+[gd_scene load_steps=7 format=3 uid="uid://dcjbdyorg0byp"]
 
 [ext_resource type="Script" uid="uid://ch84jjr32xlbg" path="res://Tekstboks/tekstboks.gd" id="1_f53m7"]
 [ext_resource type="Texture2D" uid="uid://bktwwp8d85d3f" path="res://Tekstboks/tekstboks.png" id="2_m5j71"]
+[ext_resource type="FontFile" uid="uid://cupry2ebdsjv6" path="res://Tekstboks/czcionka.ttf" id="3_lk574"]
 
-[node name="Tekstboks" type="Node2D"]
+[sub_resource type="Animation" id="Animation_m5j71"]
+resource_name = "tekstboks_pokaz"
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tlo:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(0, 320), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_lk574"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tlo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gntxd"]
+_data = {
+&"RESET": SubResource("Animation_lk574"),
+&"tekstboks_pokaz": SubResource("Animation_m5j71")
+}
+
+[node name="Tekstboks" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_f53m7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gntxd")
+}
 
-[node name="Szablon" type="Sprite2D" parent="."]
+[node name="tlo" type="Sprite2D" parent="."]
 texture = ExtResource("2_m5j71")
 centered = false
 offset = Vector2(64, 328)
+
+[node name="Tekst" type="RichTextLabel" parent="tlo"]
+offset_left = 79.0
+offset_top = 343.0
+offset_right = 1073.0
+offset_bottom = 633.0
+theme_override_fonts/normal_font = ExtResource("3_lk574")
+theme_override_font_sizes/normal_font_size = 32
+text = "temp."
