@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=3 uid="uid://d0353bse3vquh"]
+
+[ext_resource type="Texture2D" uid="uid://dtc1tj6q3mocl" path="res://Assety/ruinsEntry.png" id="1_ndych"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ntaof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6krpu"]
+size = Vector2(420, 20.2)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_er5ll"]
+normal = Vector2(-0.99999875, 0.0015698568)
+distance = -663.54675
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kgc73"]
+normal = Vector2(0, 1)
+distance = 57.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jsf34"]
+normal = Vector2(1, 0)
+distance = 19.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_frhbs"]
+distance = -241.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jejj"]
+size = Vector2(315, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xch3s"]
+size = Vector2(20, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wlsl"]
+size = Vector2(40, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jil1s"]
+size = Vector2(37, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkm3l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj0ms"]
+size = Vector2(46, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tt5s"]
+size = Vector2(45.25, 48)
+
+[node name="Mapa" type="Node2D"]
+
+[node name="RuinsEntry" type="Sprite2D" parent="."]
+position = Vector2(341, 129)
+texture = ExtResource("1_ndych")
+
+[node name="Kolizja" type="StaticBody2D" parent="."]
+position = Vector2(-1, 0)
+physics_material_override = SubResource("PhysicsMaterial_ntaof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(451, 208.5)
+shape = SubResource("RectangleShape2D_6krpu")
+
+[node name="boundR" type="CollisionShape2D" parent="Kolizja"]
+shape = SubResource("WorldBoundaryShape2D_er5ll")
+
+[node name="boundT" type="CollisionShape2D" parent="Kolizja"]
+shape = SubResource("WorldBoundaryShape2D_kgc73")
+
+[node name="boundL" type="CollisionShape2D" parent="Kolizja"]
+shape = SubResource("WorldBoundaryShape2D_jsf34")
+
+[node name="boundB" type="CollisionShape2D" parent="Kolizja"]
+shape = SubResource("WorldBoundaryShape2D_frhbs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(438.5, 118)
+shape = SubResource("RectangleShape2D_4jejj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(651, 130)
+shape = SubResource("RectangleShape2D_xch3s")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(41, 68.5)
+shape = SubResource("RectangleShape2D_3wlsl")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(259.5, 68)
+shape = SubResource("RectangleShape2D_jil1s")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(231, 228)
+shape = SubResource("RectangleShape2D_lkm3l")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(71, 229)
+shape = SubResource("RectangleShape2D_lkm3l")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(51, 209)
+shape = SubResource("RectangleShape2D_lkm3l")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(30, 189)
+shape = SubResource("RectangleShape2D_lkm3l")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Kolizja"]
+position = Vector2(619, 105.5)
+shape = SubResource("RectangleShape2D_cj0ms")
+
+[node name="Drzwi" type="Area2D" parent="."]
+position = Vector2(607, 132)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drzwi"]
+position = Vector2(10.625, 2)
+shape = SubResource("RectangleShape2D_4tt5s")
+debug_color = Color(0.6378735, 0.31029055, 1, 0.41960785)

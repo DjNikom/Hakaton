@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyhlewfbrx658"
-path="res://.godot/imported/soul.jpg-ef75de1f755da6e24d7a31bcfb2b6344.ctex"
+uid="uid://c6vclyo63rn4d"
+path="res://.godot/imported/undertale_wide.jpg-f19c86b90e38bc1f02211dd66a39d41a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://soul.jpg"
-dest_files=["res://.godot/imported/soul.jpg-ef75de1f755da6e24d7a31bcfb2b6344.ctex"]
+source_file="res://Assety/undertale_wide.jpg"
+dest_files=["res://.godot/imported/undertale_wide.jpg-f19c86b90e38bc1f02211dd66a39d41a.ctex"]
 
 [params]
 
