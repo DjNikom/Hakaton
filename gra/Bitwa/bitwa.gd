@@ -1,15 +1,40 @@
 extends Node2D
 
-var tekstboks
+var tekstboks: Tekstboks
 var dusza
+var wrog: Sprite2D
 var clickhandler
+var graczhp: Label
 
-# Called when the node enters the scene tree for the first time.
+var efekty: Array[Sprite2D] = []
+
+var wrogowie: Dane_Wrogowie
+
+var gracz_data = {
+	"hp": 20,
+	"maxhp": 20
+}
+
+var wrog_typ: String = 'smoke'
+var wrog_data: Dictionary = {}
+
 func _ready():
 	tekstboks = get_node("Tekstboks")
 	dusza = get_node("Dusza")
+	wrog = get_node("Wrog")
+	graczhp = get_node("GraczHp")
 	
+	efekty.push_back(get_node("Efekt0"))
+	efekty.push_back(get_node("Efekt1"))
+	efekty.push_back(get_node("Efekt2"))
+	efekty.push_back(get_node("Efekt3"))
+	
+	wrogowie = load("res://Bitwa/Wrogowie/dane.gd").new()
+	wrog_data = wrogowie.dane[wrog_typ]
+	
+	wrog.get_node("AnimationPlayer").play("wrog_" + wrog_data["skin"])
 	dusza.visible = false
+	hud_aktualizacja()
 	
 	var ch = func():
 		tekstboks.dokonczTekst()
@@ -45,6 +70,27 @@ func bitwa_start():
 	
 	print("Wojna!!!")
 
+func hud_aktualizacja():
+	graczhp.text = "HP: %d/%d" % [gracz_data['hp'], gracz_data['maxhp']]
+
+var efekt_licznik: int = 0
+const EFEKT_CZAS = 60 * 4
+
+func efekt_pozycja(t: float) -> float:
+	return sin(t * 2 * PI) * 32
+
+func efekt_opoznienie(t: int, o: int) -> float:
+	return float((t - o) % EFEKT_CZAS)
+
+func _process(_delta):
+	efekt_licznik += 1
+	efekt_licznik %= EFEKT_CZAS
+	
+	efekty[0].position.x = efekt_pozycja(float(efekt_licznik) / (EFEKT_CZAS - 1))
+	efekty[1].position.x = efekt_pozycja(efekt_opoznienie(efekt_licznik, 32) / (EFEKT_CZAS - 1))
+	efekty[2].position.x = efekt_pozycja(efekt_opoznienie(efekt_licznik, 64) / (EFEKT_CZAS - 1))
+	efekty[3].position.x = efekt_pozycja(efekt_opoznienie(efekt_licznik, 96) / (EFEKT_CZAS - 1))
+
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton or Input.is_action_just_pressed("player_action"):
 		if clickhandler: clickhandler.call()

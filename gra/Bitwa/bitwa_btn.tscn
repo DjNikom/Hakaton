@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqgcsahpk3a8j"]
+
+[ext_resource type="Script" uid="uid://cwd3i1xbsd7g8" path="res://Bitwa/bitwa_btn.gd" id="1_7gy52"]
+[ext_resource type="FontFile" uid="uid://cupry2ebdsjv6" path="res://Tekstboks/czcionka.ttf" id="2_g1rmf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7baoa"]
+font = ExtResource("2_g1rmf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4aqei"]
+size = Vector2(64, 32)
+
+[node name="BitwaBtn" type="Area2D"]
+script = ExtResource("1_7gy52")
+
+[node name="Tekst" type="Label" parent="."]
+offset_right = 36.0
+offset_bottom = 16.0
+text = "TEKST"
+label_settings = SubResource("LabelSettings_7baoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 9)
+shape = SubResource("RectangleShape2D_4aqei")
