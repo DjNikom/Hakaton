@@ -8,8 +8,8 @@ scale = Vector2(1.5, 1.5)
 motion_mode = 1
 script = ExtResource("1_137ax")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-8, -6, -5, -8, 0, -4, 5, -8, 8, -6, 8, 2, 0, 8, -8, 2)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_137ax")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, -6, -5, -8, 0, -4, 5, -8, 8, -6, 8, 2, 0, 8, -8, 2)

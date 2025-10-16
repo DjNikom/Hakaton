@@ -13,15 +13,21 @@ func ruch_normalny(_delta):
 	
 	velocity.x = dir_x * speed_mul * SPEED
 	velocity.y = dir_y * speed_mul * SPEED
+	
+	move_and_slide()
 
-var mode = 0 #0 - red, 1 - blue
+var mode = 0 #0 - red, 1 - yellow
 
 func _physics_process(_delta):
 	if mode == 0:
 		self.modulate = Color(1, 0, 0)
 		
-		ruch_normalny()
+		ruch_normalny(_delta)
 	if mode == 1:
-		self.modulate = Color(0, 0, 1)
+		self.modulate = Color(1, 1, 0)
+		self.rotation = PI
 		
-		ruch_normalny()
+		if Input.is_action_just_pressed("player_action"):
+			print('FEUER FREI')
+		
+		ruch_normalny(_delta)

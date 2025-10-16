@@ -1,6 +1,8 @@
 class_name BitwaBtn
 extends Area2D
 
+signal bitwabtn_wcisniety(typ: Typy)
+
 enum Typy {BTN_WALKA, BTN_UCIECZKA}
 
 const NAPISY = {
@@ -39,4 +41,4 @@ func gracz_wyszedl(body):
 
 func _input(_event):
 	if Input.is_action_just_pressed("player_action"):
-		if jestgracz: print(typ)
+		if jestgracz: self.emit_signal('bitwabtn_wcisniety')
