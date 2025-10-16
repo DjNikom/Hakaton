@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bei3khfeiufnt" path="res://Bitwa/dusza.png" id="1_x4e4d"]
 
 [node name="Dusza" type="CharacterBody2D"]
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 motion_mode = 1
 script = ExtResource("1_137ax")
 

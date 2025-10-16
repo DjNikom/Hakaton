@@ -1,3 +1,4 @@
+class_name Tekstboks
 extends Control
 
 signal tekstboks_koniec
