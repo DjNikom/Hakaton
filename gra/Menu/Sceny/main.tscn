@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://mmgv3aewjoyn"]
+[gd_scene load_steps=5 format=3 uid="uid://mmgv3aewjoyn"]
 
-[ext_resource type="Texture2D" uid="uid://c6vclyo63rn4d" path="res://undertale_wide.jpg" id="1_41wid"]
-[ext_resource type="Texture2D" uid="uid://ryk150v103p2" path="res://243e6332ee1a97bfff960f2866e6119d.jpg" id="2_xcr7t"]
-[ext_resource type="Script" uid="uid://rlxv3xwt7wch" path="res://Menu/Sceny/imagespiin.gd" id="3_2htrc"]
+[ext_resource type="Texture2D" uid="uid://c6vclyo63rn4d" path="res://Assety/undertale_wide.jpg" id="1_41wid"]
+[ext_resource type="Theme" uid="uid://dxnpvkg75ueod" path="res://Menu/Assety/new_theme.tres" id="2_u7mro"]
+[ext_resource type="Script" uid="uid://bq40p3ltrbxps" path="res://Menu/Sceny/button_bitwa_test.gd" id="2_xcr7t"]
+[ext_resource type="AudioStream" uid="uid://fr884a4u8lji" path="res://Assety/undertale-battle-start.mp3" id="3_41wid"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -12,23 +13,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576.49994, 76)
-scale = Vector2(2.0299294, 1)
-texture = ExtResource("1_41wid")
-
-[node name="243e6332Ee1a97Bfff960f2866e6119d" type="Sprite2D" parent="."]
-position = Vector2(479, 401)
-scale = Vector2(1.0285326, 0.25977653)
-texture = ExtResource("2_xcr7t")
-script = ExtResource("3_2htrc")
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -35.0
+offset_top = -20.999998
+offset_right = 5.0
+offset_bottom = 19.000002
+scale = Vector2(30.490221, 17.028027)
+color = Color(0, 0, 0, 1)
 
 [node name="ButtonBitwaTest" type="Button" parent="."]
 layout_mode = 0
-offset_left = 980.0
-offset_top = 552.0
-offset_right = 1069.0
-offset_bottom = 583.0
+offset_left = 376.0
+offset_top = 210.0
+offset_right = 782.0
+offset_bottom = 314.0
+theme = ExtResource("2_u7mro")
 text = "Bitwa Test"
+script = ExtResource("2_xcr7t")
 
-[connection signal="pressed" from="ButtonBitwaTest" to="243e6332Ee1a97Bfff960f2866e6119d" method="_on_button_bitwa_test_pressed"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 321)
+
+[node name="UndertaleBattleStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_41wid")
+autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(571, 137)
+scale = Vector2(1.43, 1.43)
+texture = ExtResource("1_41wid")

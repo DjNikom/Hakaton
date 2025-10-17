@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dxnpvkg75ueod"]
+
+[ext_resource type="FontFile" uid="uid://cupry2ebdsjv6" path="res://Tekstboks/czcionka.ttf" id="1_cj2lq"]
+
+[resource]
+default_font = ExtResource("1_cj2lq")
+default_font_size = 95
+Button/colors/font_hover_color = Color(0.9490196, 0.9490196, 0.31764707, 1)
+Button/colors/font_hover_pressed_color = Color(0.9490196, 0.65882355, 0.31764707, 1)
+Button/colors/font_pressed_color = Color(0.9490196, 0.65882355, 0.31764707, 1)
