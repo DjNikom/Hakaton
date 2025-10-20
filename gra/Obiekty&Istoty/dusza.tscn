@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://v513r82dgxxb"]
 
-[ext_resource type="Script" uid="uid://chuki17mj0kn8" path="res://Bitwa/dusza.gd" id="1_137ax"]
-[ext_resource type="Texture2D" uid="uid://bqc3huuadgddi" path="res://Bitwa/duszamodulate.png" id="2_137ax"]
+[ext_resource type="Script" uid="uid://chuki17mj0kn8" path="res://Skrypty/Bitwa/dusza.gd" id="1_137ax"]
+[ext_resource type="Texture2D" uid="uid://bqc3huuadgddi" path="res://Assety/AssetyDoInnychRzeczy/duszamodulate.png" id="2_137ax"]
 
 [node name="Dusza" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)

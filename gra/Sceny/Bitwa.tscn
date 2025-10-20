@@ -1,13 +1,13 @@
 [gd_scene load_steps=18 format=3 uid="uid://bkagw6072xdje"]
 
-[ext_resource type="Script" uid="uid://pyg7j862q7rl" path="res://Bitwa/bitwa.gd" id="1_sr88k"]
-[ext_resource type="Texture2D" uid="uid://crxgvrs7rumdu" path="res://Bitwa/tlo.png" id="2_3i2hx"]
+[ext_resource type="Script" uid="uid://pyg7j862q7rl" path="res://Skrypty/Bitwa/bitwa.gd" id="1_sr88k"]
+[ext_resource type="Texture2D" uid="uid://d38bstbl1n4pm" path="res://Assety/AssetyDoInnychRzeczy/tlo.png" id="2_3i2hx"]
 [ext_resource type="PackedScene" uid="uid://dcjbdyorg0byp" path="res://Tekstboks/tekstboks.tscn" id="2_bykv2"]
-[ext_resource type="PackedScene" uid="uid://v513r82dgxxb" path="res://Bitwa/dusza.tscn" id="3_hwoyi"]
-[ext_resource type="Texture2D" uid="uid://gfirmcfnm1hv" path="res://Bitwa/efekt.png" id="3_uj80w"]
-[ext_resource type="Texture2D" uid="uid://i6gerwjg7kol" path="res://blad.png" id="4_gb8yb"]
-[ext_resource type="Texture2D" uid="uid://comsedhp8bo2n" path="res://Bitwa/Wrogowie/Smoke.png" id="5_dydg6"]
-[ext_resource type="PackedScene" uid="uid://bqgcsahpk3a8j" path="res://Bitwa/bitwa_btn.tscn" id="8_6c01w"]
+[ext_resource type="PackedScene" uid="uid://v513r82dgxxb" path="res://Obiekty&Istoty/dusza.tscn" id="3_hwoyi"]
+[ext_resource type="Texture2D" uid="uid://gfirmcfnm1hv" path="res://Assety/AssetyDoInnychRzeczy/efekt.png" id="3_uj80w"]
+[ext_resource type="Texture2D" uid="uid://i6gerwjg7kol" path="res://Assety/AssetyDoInnychRzeczy/blad.png" id="4_gb8yb"]
+[ext_resource type="Texture2D" uid="uid://comsedhp8bo2n" path="res://Assety/AssetyDoInnychRzeczy/Smoke.png" id="5_dydg6"]
+[ext_resource type="PackedScene" uid="uid://bqgcsahpk3a8j" path="res://Obiekty&Istoty/bitwa_btn.tscn" id="8_6c01w"]
 [ext_resource type="FontFile" uid="uid://cupry2ebdsjv6" path="res://Tekstboks/czcionka.ttf" id="8_phajy"]
 
 [sub_resource type="Animation" id="Animation_phajy"]
@@ -132,6 +132,7 @@ libraries = {
 [node name="BtnWalka" parent="Przyciski" instance=ExtResource("8_6c01w")]
 position = Vector2(106, 585)
 scale = Vector2(2, 2)
+typ = null
 
 [node name="BtnUcieczka" parent="Przyciski" instance=ExtResource("8_6c01w")]
 position = Vector2(976, 586)

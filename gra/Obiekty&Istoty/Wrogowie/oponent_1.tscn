@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7blkkn1ts5j5"]
+
+[ext_resource type="Script" uid="uid://b81hyyufoahsd" path="res://Skrypty/Bitwa/oponent_1.gd" id="1_cevjb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2gicu"]
+
+[node name="Oponent_1" type="Node2D"]
+script = ExtResource("1_cevjb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2gicu")

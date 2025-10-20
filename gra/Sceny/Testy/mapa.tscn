@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://d0353bse3vquh"]
 
-[ext_resource type="Texture2D" uid="uid://dtc1tj6q3mocl" path="res://Assety/ruinsEntry.png" id="1_ndych"]
+[ext_resource type="Texture2D" uid="uid://dtc1tj6q3mocl" path="res://Bitwa/Assety/ruinsEntry.png" id="1_ndych"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ntaof"]
 

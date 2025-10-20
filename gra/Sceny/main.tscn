@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://mmgv3aewjoyn"]
 
-[ext_resource type="Texture2D" uid="uid://c6vclyo63rn4d" path="res://Assety/undertale_wide.jpg" id="1_41wid"]
-[ext_resource type="Theme" uid="uid://dxnpvkg75ueod" path="res://Menu/Assety/new_theme.tres" id="2_u7mro"]
-[ext_resource type="Script" uid="uid://bq40p3ltrbxps" path="res://Menu/Sceny/button_bitwa_test.gd" id="2_xcr7t"]
-[ext_resource type="AudioStream" uid="uid://fr884a4u8lji" path="res://Assety/undertale-battle-start.mp3" id="3_41wid"]
+[ext_resource type="Texture2D" uid="uid://vnex85kbgx4x" path="res://Assety/AssetyDoInnychRzeczy/undertale_wide.jpg" id="1_41wid"]
+[ext_resource type="Theme" uid="uid://dxnpvkg75ueod" path="res://Assety/AssetyDoMenu/new_theme.tres" id="2_u7mro"]
+[ext_resource type="Script" uid="uid://bq40p3ltrbxps" path="res://Skrypty/Menu/button_bitwa_test.gd" id="2_xcr7t"]
+[ext_resource type="AudioStream" uid="uid://03goususfk3k" path="res://Assety/AssetyDoInnychRzeczy/undertale-battle-start.mp3" id="3_41wid"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -16,10 +16,10 @@ grow_vertical = 2
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = -35.0
-offset_top = -20.999998
+offset_top = -21.0
 offset_right = 5.0
-offset_bottom = 19.000002
-scale = Vector2(30.490221, 17.028027)
+offset_bottom = 19.0
+scale = Vector2(30.4902, 17.028)
 color = Color(0, 0, 0, 1)
 
 [node name="ButtonBitwaTest" type="Button" parent="."]

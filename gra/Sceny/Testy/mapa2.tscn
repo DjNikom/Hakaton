@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dho278xm06i0o"]
 
-[ext_resource type="Texture2D" uid="uid://btnasu6k776ya" path="res://Assety/Untitled15_20251020144430.png" id="1_g76bk"]
+[ext_resource type="Texture2D" uid="uid://btnasu6k776ya" path="res://Bitwa/Assety/Untitled15_20251020144430.png" id="1_g76bk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0fghv"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btnasu6k776ya"
-path="res://.godot/imported/Untitled15_20251020144430.png-729b48824447e058fe16129105d2cc47.ctex"
+uid="uid://bqc3huuadgddi"
+path="res://.godot/imported/duszamodulate.png-ad1ccb65345ed9283fecd73583169da6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assety/Untitled15_20251020144430.png"
-dest_files=["res://.godot/imported/Untitled15_20251020144430.png-729b48824447e058fe16129105d2cc47.ctex"]
+source_file="res://Assety/AssetyDoInnychRzeczy/duszamodulate.png"
+dest_files=["res://.godot/imported/duszamodulate.png-ad1ccb65345ed9283fecd73583169da6.ctex"]
 
 [params]
 

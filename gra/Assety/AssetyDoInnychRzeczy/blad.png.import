@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6vclyo63rn4d"
-path="res://.godot/imported/undertale_wide.jpg-f19c86b90e38bc1f02211dd66a39d41a.ctex"
+uid="uid://i6gerwjg7kol"
+path="res://.godot/imported/blad.png-96e62721bd4a54268e1ffb91e6e973f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assety/undertale_wide.jpg"
-dest_files=["res://.godot/imported/undertale_wide.jpg-f19c86b90e38bc1f02211dd66a39d41a.ctex"]
+source_file="res://Assety/AssetyDoInnychRzeczy/blad.png"
+dest_files=["res://.godot/imported/blad.png-96e62721bd4a54268e1ffb91e6e973f9.ctex"]
 
 [params]
 

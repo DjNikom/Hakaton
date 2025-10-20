@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crxgvrs7rumdu"
-path="res://.godot/imported/tlo.png-94cea7bdf90ff7182e8b6adf3f9d26cb.ctex"
+uid="uid://comsedhp8bo2n"
+path="res://.godot/imported/Smoke.png-718d35ef355f86d3de4b0f3c97349126.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bitwa/tlo.png"
-dest_files=["res://.godot/imported/tlo.png-94cea7bdf90ff7182e8b6adf3f9d26cb.ctex"]
+source_file="res://Assety/AssetyDoInnychRzeczy/Smoke.png"
+dest_files=["res://.godot/imported/Smoke.png-718d35ef355f86d3de4b0f3c97349126.ctex"]
 
 [params]
 

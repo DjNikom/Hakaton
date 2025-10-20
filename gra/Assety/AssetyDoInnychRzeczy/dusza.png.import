@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyhlewfbrx658"
-path="res://.godot/imported/soul.jpg-6bb91710787adcb254215ac917951376.ctex"
+uid="uid://bei3khfeiufnt"
+path="res://.godot/imported/dusza.png-36519b0aa346c860dc997d045eb73a92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assety/soul.jpg"
-dest_files=["res://.godot/imported/soul.jpg-6bb91710787adcb254215ac917951376.ctex"]
+source_file="res://Assety/AssetyDoInnychRzeczy/dusza.png"
+dest_files=["res://.godot/imported/dusza.png-36519b0aa346c860dc997d045eb73a92.ctex"]
 
 [params]
 

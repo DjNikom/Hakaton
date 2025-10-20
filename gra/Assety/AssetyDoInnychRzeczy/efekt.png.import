@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtc1tj6q3mocl"
-path="res://.godot/imported/ruinsEntry.png-fd2c3798d6f3cdbbc57ba64016eda49d.ctex"
+uid="uid://gfirmcfnm1hv"
+path="res://.godot/imported/efekt.png-54a46a718e8d5434d587250eb76e8025.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assety/ruinsEntry.png"
-dest_files=["res://.godot/imported/ruinsEntry.png-fd2c3798d6f3cdbbc57ba64016eda49d.ctex"]
+source_file="res://Assety/AssetyDoInnychRzeczy/efekt.png"
+dest_files=["res://.godot/imported/efekt.png-54a46a718e8d5434d587250eb76e8025.ctex"]
 
 [params]
 

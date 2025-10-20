@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqc3huuadgddi"
-path="res://.godot/imported/duszamodulate.png-30acab6c9f5a0336b51ebbc4b1283be7.ctex"
+uid="uid://dtc1tj6q3mocl"
+path="res://.godot/imported/ruinsEntry.png-b64e103a89964861d28228886bc5eea1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bitwa/duszamodulate.png"
-dest_files=["res://.godot/imported/duszamodulate.png-30acab6c9f5a0336b51ebbc4b1283be7.ctex"]
+source_file="res://Assety/AssetyDoInnychRzeczy/ruinsEntry.png"
+dest_files=["res://.godot/imported/ruinsEntry.png-b64e103a89964861d28228886bc5eea1.ctex"]
 
 [params]
 
