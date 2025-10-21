@@ -1,7 +1,4 @@
 extends Node2D
-var dane = {
-	"smoke": {
-		"skin": "smoke",
-		"hp": 100
-	}
-}
+
+static var maxhp = 20
+static var dmg = 3
