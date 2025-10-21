@@ -5,6 +5,7 @@ var dusza
 var wrog: Sprite2D
 var clickhandler
 var graczhp: Label
+var przyciski: Node2D
 
 var efekty: Array[Sprite2D] = []
 
@@ -15,14 +16,17 @@ var gracz_data = {
 	"maxhp": 20
 }
 
-var wrog_typ: String = 'smoke'
+var wrog_typ: String = "smoke"
 var wrog_data: Dictionary = {}
 
 func _ready():
+	randomize()
+	
 	tekstboks = get_node("Tekstboks")
 	dusza = get_node("Dusza")
 	wrog = get_node("Wrog")
 	graczhp = get_node("GraczHp")
+	przyciski = get_node("Przyciski")
 	
 	efekty.push_back(get_node("Efekt0"))
 	efekty.push_back(get_node("Efekt1"))
@@ -59,8 +63,7 @@ func _ready():
 		
 		timer.start()
 	
-	tekstboks.pokazTekst("* You feel like you picked the wrong house.")
-	
+	tekstboks.pokazTekst(wrog_data["appeartexts"].pick_random())
 	tekstboks.tekstboks_koniec.connect(th.call)
 	
 	clickhandler = ch
@@ -68,10 +71,57 @@ func _ready():
 func bitwa_start():
 	dusza.visible = true
 	
+	for c: BitwaBtn in przyciski.get_children():
+		c.bitwabtn_wcisniety.connect(bitwa_btn)
+	
 	print("Wojna!!!")
 
+func bitwa_btn(typ: BitwaBtn.Typy):
+	if not przyciski.visible: return
+	match typ:
+		BitwaBtn.Typy.BTN_WALKA: bitwa_btnwalka()
+
+var atak = []
+var atak_stan = 0
+var atak_opoznienie = 0
+
+func bitwa_btnwalka():
+	print("Peace was never an option")
+	przyciski.visible = false
+	
+	atak = wrog_data["ataki"].pick_random()
+	atak_stan = 0
+	atak_opoznienie = 0
+	print(atak)
+	
+	var timer = Timer.new()
+	self.add_child(timer)
+	
+	var tykacz = func():
+		if atak_stan >= len(atak) and atak_opoznienie <= 0:
+			timer.queue_free()
+			bitwa_koniecataku()
+			return
+		while atak_opoznienie <= 0:
+			var stan = atak[atak_stan]
+			var f = stan["funkcja"]
+			atak_opoznienie = stan["opoznienie"]
+			atak_stan += 1
+			if f: f.callv(stan["parametry"])
+		atak_opoznienie -= 1
+	
+	timer.wait_time = 0.1
+	timer.one_shot = false
+	timer.timeout.connect(tykacz.call)
+	
+	timer.start()
+
+func bitwa_koniecataku():
+	print("Koniec ataku")
+	przyciski.visible = true
+
 func hud_aktualizacja():
-	graczhp.text = "HP: %d/%d" % [gracz_data['hp'], gracz_data['maxhp']]
+	graczhp.text = "HP: %d/%d" % [gracz_data["hp"], gracz_data["maxhp"]]
 
 var efekt_licznik: int = 0
 const EFEKT_CZAS = 60 * 4

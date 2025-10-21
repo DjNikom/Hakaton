@@ -26,7 +26,7 @@ func odlaczOdAnimatora():
 	for c in animator.animation_finished.get_connections():
 		animator.animation_finished.disconnect(c.callable)
 
-func pokazTekst(tekst: String = 'Tekstbox', przedrostek: String = "", opoznienie: float = 0.05):
+func pokazTekst(tekst: String = "Tekstbox", przedrostek: String = "", opoznienie: float = 0.05):
 	var callback = func(__): napiszTekst(tekst, przedrostek, opoznienie)
 	
 	tekstboks.text = przedrostek

@@ -41,4 +41,4 @@ func gracz_wyszedl(body):
 
 func _input(_event):
 	if Input.is_action_just_pressed("player_action"):
-		if jestgracz: self.emit_signal('bitwabtn_wcisniety')
+		if jestgracz: self.emit_signal("bitwabtn_wcisniety", typ)

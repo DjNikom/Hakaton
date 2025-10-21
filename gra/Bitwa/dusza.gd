@@ -28,6 +28,6 @@ func _physics_process(_delta):
 		self.rotation = PI
 		
 		if Input.is_action_just_pressed("player_action"):
-			print('FEUER FREI')
+			print("FEUER FREI")
 		
 		ruch_normalny(_delta)
