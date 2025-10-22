@@ -111,3 +111,11 @@ position = Vector2(607, 132)
 position = Vector2(10.625, 2)
 shape = SubResource("RectangleShape2D_4tt5s")
 debug_color = Color(0.6378735, 0.31029055, 1, 0.41960785)
+
+[node name="spawns" type="Node" parent="."]
+
+[node name="init" type="Marker2D" parent="spawns"]
+position = Vector2(155, 141)
+
+[node name="door0" type="Marker2D" parent="spawns"]
+position = Vector2(620, 179)

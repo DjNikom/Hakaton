@@ -65,3 +65,11 @@ debug_color = Color(0.65084624, 0.3280644, 1, 0.42)
 position = Vector2(384, 237)
 shape = SubResource("RectangleShape2D_musfo")
 debug_color = Color(0.8554665, 0.0007708621, 0.8868534, 0.42)
+
+[node name="spawns" type="Node" parent="."]
+
+[node name="door1" type="Marker2D" parent="spawns"]
+position = Vector2(350, 238)
+
+[node name="door0" type="Marker2D" parent="spawns"]
+position = Vector2(47, 204)
