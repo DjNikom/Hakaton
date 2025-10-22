@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bkagw6072xdje"]
+[gd_scene load_steps=20 format=3 uid="uid://bkagw6072xdje"]
 
 [ext_resource type="Script" uid="uid://pyg7j862q7rl" path="res://Bitwa/bitwa.gd" id="1_sr88k"]
 [ext_resource type="Texture2D" uid="uid://crxgvrs7rumdu" path="res://Bitwa/tlo.png" id="2_3i2hx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gfirmcfnm1hv" path="res://Bitwa/efekt.png" id="3_uj80w"]
 [ext_resource type="Texture2D" uid="uid://i6gerwjg7kol" path="res://blad.png" id="4_gb8yb"]
 [ext_resource type="Texture2D" uid="uid://comsedhp8bo2n" path="res://Bitwa/Wrogowie/Smoke.png" id="5_dydg6"]
+[ext_resource type="Texture2D" uid="uid://b0ssp3om4yhkq" path="res://Bitwa/Wrogowie/frog.png" id="6_oyjmv"]
 [ext_resource type="PackedScene" uid="uid://bqgcsahpk3a8j" path="res://Bitwa/bitwa_btn.tscn" id="8_6c01w"]
 [ext_resource type="FontFile" uid="uid://cupry2ebdsjv6" path="res://Tekstboks/czcionka.ttf" id="8_phajy"]
 
@@ -66,9 +67,25 @@ tracks/1/keys = {
 "values": [Vector2(-8, 0), Vector2(8, 0), Vector2(-8, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_thtrf"]
+resource_name = "wrog_frog"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_oyjmv")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oyjmv"]
 _data = {
 &"RESET": SubResource("Animation_phajy"),
+&"wrog_frog": SubResource("Animation_thtrf"),
 &"wrog_smoke": SubResource("Animation_6c01w")
 }
 
