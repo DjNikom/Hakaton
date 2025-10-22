@@ -36,9 +36,9 @@ var dane = {
 		],
 		
 		"appeartexts": [
-			"* You feel like you picked the wrong house.",
-			"* You suddenly want to have two number nines.",
-			"* You feel like you can't breathe with all the smoke in here."
+			"* You are overwhelmed with the cuteness of this tiny creature.",
+			"* You suddenly feel an urge to pet the frog.",
+			"* FROG, THE RULER OF THE POND, ENTERS THE ARENA"
 		]
 	}
 }
