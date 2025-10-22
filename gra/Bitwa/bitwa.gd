@@ -16,7 +16,7 @@ var gracz_data = {
 	"maxhp": 20
 }
 
-var wrog_typ: String = "smoke"
+var wrog_typ: String = "frog"
 var wrog_data: Dictionary = {}
 
 func _ready():
