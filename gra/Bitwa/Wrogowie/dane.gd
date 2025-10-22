@@ -38,7 +38,8 @@ var dane = {
 		"appeartexts": [
 			"* You are overwhelmed with the cuteness of this tiny creature.",
 			"* You suddenly feel an urge to pet the frog.",
-			"* FROG, THE RULER OF THE POND, ENTERS THE ARENA"
+			"* FROG, THE RULER OF THE POND, ENTERS THE ARENA",
+			"* meow"
 		]
 	}
 }
