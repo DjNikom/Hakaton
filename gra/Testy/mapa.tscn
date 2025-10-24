@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0353bse3vquh"]
+[gd_scene load_steps=15 format=3 uid="uid://d0353bse3vquh"]
 
 [ext_resource type="Texture2D" uid="uid://dtc1tj6q3mocl" path="res://Assety/ruinsEntry.png" id="1_ndych"]
-[ext_resource type="PackedScene" uid="uid://dracwxu2j5a7g" path="res://Postacie/Player/player.tscn" id="1_q0dom"]
+[ext_resource type="PackedScene" uid="uid://dmf5s7uywfivi" path="res://Wazne/drzwi.tscn" id="2_ndych"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ntaof"]
 
@@ -40,11 +40,7 @@ size = Vector2(37, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cj0ms"]
 size = Vector2(46, 9)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tt5s"]
-size = Vector2(45.25, 48)
-
 [node name="Mapa" type="Node2D"]
-scale = Vector2(4, 4)
 
 [node name="RuinsEntry" type="Sprite2D" parent="."]
 position = Vector2(341, 129)
@@ -106,16 +102,10 @@ shape = SubResource("RectangleShape2D_lkm3l")
 position = Vector2(619, 105.5)
 shape = SubResource("RectangleShape2D_cj0ms")
 
-[node name="Drzwi" type="Area2D" parent="."]
-position = Vector2(607, 132)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drzwi"]
-position = Vector2(10.625, 2)
-shape = SubResource("RectangleShape2D_4tt5s")
-debug_color = Color(0.6378735, 0.31029055, 1, 0.41960785)
-
-[node name="Frisk" parent="." instance=ExtResource("1_q0dom")]
-position = Vector2(170, 145)
+[node name="Drzwi" parent="." instance=ExtResource("2_ndych")]
+position = Vector2(618, 134)
+scale = Vector2(1.126417, 1.2577113)
+metadata/target = "res://Testy/mapa2.tscn"
 
 [node name="spawns" type="Node" parent="."]
 

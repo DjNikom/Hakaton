@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmf5s7uywfivi"]
+
+[ext_resource type="Script" uid="uid://cr3l7xrfajp6c" path="res://Wazne/drzwi.gd" id="1_4o0dq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nadky"]
+size = Vector2(38, 35)
+
+[node name="Drzwi" type="Area2D"]
+script = ExtResource("1_4o0dq")
+metadata/target = "res://Testy/mapa.tscn"
+metadata/targetpos = "door0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nadky")
+debug_color = Color(0.65084624, 0.3280644, 1, 0.42)

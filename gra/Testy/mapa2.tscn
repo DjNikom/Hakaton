@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dho278xm06i0o"]
+[gd_scene load_steps=8 format=3 uid="uid://dho278xm06i0o"]
 
 [ext_resource type="Texture2D" uid="uid://btnasu6k776ya" path="res://Assety/Untitled15_20251020144430.png" id="1_g76bk"]
+[ext_resource type="PackedScene" uid="uid://dmf5s7uywfivi" path="res://Wazne/drzwi.tscn" id="2_0fghv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0fghv"]
 
@@ -15,12 +16,6 @@ normal = Vector2(1, 2.3831164e-07)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mmnef"]
 normal = Vector2(-1, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivl62"]
-size = Vector2(38, 35)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_musfo"]
-size = Vector2(20, 58)
 
 [node name="Mapa" type="Node2D"]
 
@@ -52,19 +47,13 @@ shape = SubResource("WorldBoundaryShape2D_xdi7e")
 position = Vector2(395, 241)
 shape = SubResource("WorldBoundaryShape2D_mmnef")
 
-[node name="Drzwi" type="Area2D" parent="."]
+[node name="Drzwi" parent="." instance=ExtResource("2_0fghv")]
+position = Vector2(42, 167)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drzwi"]
-position = Vector2(45, 166.5)
-shape = SubResource("RectangleShape2D_ivl62")
-debug_color = Color(0.65084624, 0.3280644, 1, 0.42)
-
-[node name="Drzwi2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drzwi2"]
-position = Vector2(384, 237)
-shape = SubResource("RectangleShape2D_musfo")
-debug_color = Color(0.8554665, 0.0007708621, 0.8868534, 0.42)
+[node name="Drzwi2" parent="." instance=ExtResource("2_0fghv")]
+position = Vector2(385, 232)
+scale = Vector2(0.77102804, 1.9333333)
+metadata/target = "res://Testy/mapa2.tscn"
 
 [node name="spawns" type="Node" parent="."]
 
