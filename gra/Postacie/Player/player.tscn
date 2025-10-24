@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://dracwxu2j5a7g"]
+
+[ext_resource type="Script" uid="uid://bfjshbow7qtro" path="res://movements.gd" id="1_h5h6g"]
+[ext_resource type="Texture2D" uid="uid://b5f0vuays812d" path="res://Assets/433-4331293_undertale-frisk-sprite-sheet-hd-png-download.png" id="1_rlcjs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlcjs"]
+atlas = ExtResource("1_rlcjs")
+region = Rect2(0, 0, 172, 257)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5h6g"]
+atlas = ExtResource("1_rlcjs")
+region = Rect2(172, 0, 172, 257)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1n30"]
+atlas = ExtResource("1_rlcjs")
+region = Rect2(344, 0, 172, 257)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x04w"]
+atlas = ExtResource("1_rlcjs")
+region = Rect2(516, 0, 172, 257)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap125"]
+atlas = ExtResource("1_rlcjs")
+region = Rect2(688, 0, 172, 257)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0m531"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlcjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5h6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1n30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x04w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap125")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlcjs"]
+size = Vector2(173, 240)
+
+[node name="Frisk" type="CharacterBody2D"]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_h5h6g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0m531")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_rlcjs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
