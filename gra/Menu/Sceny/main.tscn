@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://mmgv3aewjoyn"]
+[gd_scene load_steps=6 format=3 uid="uid://mmgv3aewjoyn"]
 
 [ext_resource type="Texture2D" uid="uid://c6vclyo63rn4d" path="res://Assety/undertale_wide.jpg" id="1_41wid"]
 [ext_resource type="Theme" uid="uid://dxnpvkg75ueod" path="res://Menu/Assety/new_theme.tres" id="2_u7mro"]
 [ext_resource type="Script" uid="uid://bq40p3ltrbxps" path="res://Menu/Sceny/button_bitwa_test.gd" id="2_xcr7t"]
 [ext_resource type="AudioStream" uid="uid://fr884a4u8lji" path="res://Assety/undertale-battle-start.mp3" id="3_41wid"]
+[ext_resource type="Script" uid="uid://byn73agshc3cm" path="res://button_map_init.gd" id="5_2htrc"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -31,6 +32,7 @@ offset_bottom = 314.0
 theme = ExtResource("2_u7mro")
 text = "Bitwa Test"
 script = ExtResource("2_xcr7t")
+metadata/target = "res://Bitwa/Bitwa.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(575, 321)
@@ -43,3 +45,14 @@ autoplay = true
 position = Vector2(571, 137)
 scale = Vector2(1.43, 1.43)
 texture = ExtResource("1_41wid")
+
+[node name="ButtonBitwaTest2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 326.0
+offset_right = 780.0
+offset_bottom = 430.0
+theme = ExtResource("2_u7mro")
+text = "Mapa Test"
+script = ExtResource("5_2htrc")
+metadata/target = "res://Testy/mapa.tscn"
