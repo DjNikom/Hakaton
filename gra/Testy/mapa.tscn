@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0353bse3vquh"]
+[gd_scene load_steps=16 format=3 uid="uid://d0353bse3vquh"]
 
 [ext_resource type="Texture2D" uid="uid://dtc1tj6q3mocl" path="res://Assety/ruinsEntry.png" id="1_ndych"]
+[ext_resource type="PackedScene" uid="uid://dracwxu2j5a7g" path="res://Postacie/Player/player.tscn" id="1_q0dom"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ntaof"]
 
@@ -43,6 +44,7 @@ size = Vector2(46, 9)
 size = Vector2(45.25, 48)
 
 [node name="Mapa" type="Node2D"]
+scale = Vector2(4, 4)
 
 [node name="RuinsEntry" type="Sprite2D" parent="."]
 position = Vector2(341, 129)
@@ -111,6 +113,9 @@ position = Vector2(607, 132)
 position = Vector2(10.625, 2)
 shape = SubResource("RectangleShape2D_4tt5s")
 debug_color = Color(0.6378735, 0.31029055, 1, 0.41960785)
+
+[node name="Frisk" parent="." instance=ExtResource("1_q0dom")]
+position = Vector2(170, 145)
 
 [node name="spawns" type="Node" parent="."]
 
