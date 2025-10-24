@@ -1,5 +1,7 @@
 class_name Dane_Wrogowie
 
+const ATAK_PELLET = "res://Bitwa/Ataki/pellet.tscn"
+
 var dane = {
 	"smoke": {
 		"skin": "smoke",
@@ -7,10 +9,15 @@ var dane = {
 		
 		"ataki": [
 			[
-				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": []},
-				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [1.0]},
-				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [-1.0]},
-				{"opoznienie": 25, "funkcja": null}
+				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 3.0]},
+				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 3.0, 0.1]},
+				{"opoznienie": 25, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 3.0, -0.1]},
+				
+				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 4.0]},
+				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 4.0, 0.2]},
+				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 4.0, -0.2]},
+				
+				{"opoznienie": 50, "funkcja": null}
 			]
 		],
 		
@@ -28,9 +35,9 @@ var dane = {
 		
 		"ataki": [
 			[
-				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": []},
-				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [1.0]},
-				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [-1.0]},
+				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0]},
+				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0, 1.0]},
+				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0, -1.0]},
 				{"opoznienie": 25, "funkcja": null}
 			]
 		],
@@ -44,7 +51,25 @@ var dane = {
 	}
 }
 
+class WrogInfo:
+	var dane: Dictionary
+	var obraz: Sprite2D
+	var animator: AnimationPlayer
+	var dusza: Dusza
+	var pozycja: Vector2
+	
+	func _init(p_dane: Dictionary, p_obraz: Sprite2D, p_animator: AnimationPlayer, p_dusza):
+		self.dane = p_dane
+		self.obraz = p_obraz
+		self.animator = p_animator
+		self.dusza = p_dusza
+		self.pozycja = p_obraz.position + p_obraz.offset
 
-
-func atak_normalny(kat_presuniecie: float = 0.0):
-	print(kat_presuniecie)
+func atak_normalny(wrog: WrogInfo, objekt: StringName, szybkosc: float = 1.0, kat_presuniecie: float = 0.0):
+	var atak = load(objekt).instantiate()
+	wrog.dusza.get_tree().current_scene.add_child(atak)
+	
+	var kierunek = (wrog.dusza.position - wrog.pozycja).normalized() * szybkosc
+	
+	atak.predkosc = kierunek.rotated(kat_presuniecie)
+	atak.position = wrog.pozycja

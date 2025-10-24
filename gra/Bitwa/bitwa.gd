@@ -13,10 +13,11 @@ var wrogowie: Dane_Wrogowie
 
 var gracz_data = {
 	"hp": 20,
-	"maxhp": 20
+	"maxhp": 20,
+	"mode": 0
 }
 
-var wrog_typ: String = "frog"
+var wrog_typ: String = "smoke"
 var wrog_data: Dictionary = {}
 
 func _ready():
@@ -70,6 +71,7 @@ func _ready():
 
 func bitwa_start():
 	dusza.visible = true
+	dusza.mode = gracz_data["mode"]
 	
 	for c: BitwaBtn in przyciski.get_children():
 		c.bitwabtn_wcisniety.connect(bitwa_btn)
@@ -107,7 +109,10 @@ func bitwa_btnwalka():
 			var f = stan["funkcja"]
 			atak_opoznienie = stan["opoznienie"]
 			atak_stan += 1
-			if f: f.callv(stan["parametry"])
+			if f:
+				var parametry = [wrogowie.WrogInfo.new(wrog_data, wrog, wrog.get_node("AnimationPlayer"), dusza)]
+				parametry.append_array(stan["parametry"])
+				f.callv(parametry)
 		atak_opoznienie -= 1
 	
 	timer.wait_time = 0.1
