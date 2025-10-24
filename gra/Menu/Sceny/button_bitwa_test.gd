@@ -1,4 +1,4 @@
 extends Button
 
 func _pressed() -> void:
-	get_tree().change_scene_to_file("res://Bitwa/Bitwa.tscn")
+	get_tree().change_scene_to_file(self.get_meta("target"))

@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 var speed_mul: float = 1
 
-const SPEED = 300.0
+
+const SPEED = 150.0
 
 func _physics_process(_delta):
 	var dir_x = Input.get_axis("player_left", "player_right")

@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0353bse3vquh"]
+[gd_scene load_steps=15 format=3 uid="uid://d0353bse3vquh"]
 
 [ext_resource type="Texture2D" uid="uid://dtc1tj6q3mocl" path="res://Assety/ruinsEntry.png" id="1_ndych"]
 [ext_resource type="PackedScene" uid="uid://dmf5s7uywfivi" path="res://Wazne/drzwi.tscn" id="2_ndych"]
-[ext_resource type="PackedScene" uid="uid://dracwxu2j5a7g" path="res://Postacie/Player/player.tscn" id="3_q0dom"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ntaof"]
 
@@ -111,10 +110,7 @@ metadata/target = "res://Testy/mapa2.tscn"
 [node name="spawns" type="Node" parent="."]
 
 [node name="init" type="Marker2D" parent="spawns"]
-position = Vector2(155, 141)
+position = Vector2(151, 137)
 
 [node name="door0" type="Marker2D" parent="spawns"]
 position = Vector2(620, 179)
-
-[node name="Frisk" parent="." instance=ExtResource("3_q0dom")]
-position = Vector2(139, 145)

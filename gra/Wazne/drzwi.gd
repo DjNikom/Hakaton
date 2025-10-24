@@ -10,6 +10,5 @@ func _process(delta: float) -> void:
 	pass
 
 func collision(body):
-	print(body)
 	if body is Gracz:
 		mapswitcher.goto_scene(self.get_meta("target"), self.get_meta("targetpos"))

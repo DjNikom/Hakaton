@@ -95,3 +95,7 @@ shape = SubResource("WorldBoundaryShape2D_uj80w")
 shape = SubResource("WorldBoundaryShape2D_dydg6")
 
 [node name="Tekstboks" parent="." instance=ExtResource("2_bykv2")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+zoom = Vector2(0.83, 0.83)
