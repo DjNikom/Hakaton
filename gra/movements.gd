@@ -1,4 +1,4 @@
-class_name Frisk
+class_name Gracz
 extends CharacterBody2D
 
 var speed_mul: float = 1

@@ -21,7 +21,7 @@ func goto_scene(path, point):
 
 
 func _deferred_goto_scene(path, point):
-	var gracz = ResourceLoader.load("res://Testy/mozedusza.tscn")
+	var gracz = ResourceLoader.load("res://Postacie/Player/player.tscn")
 
 	# It is now safe to remove the current scene.
 	current_scene.free()
@@ -42,4 +42,4 @@ func _deferred_goto_scene(path, point):
 	
 	var spawnpos = get_tree().current_scene.get_node("spawns").get_node(point).position
 	
-	get_tree().current_scene.get_node("Dusza").position = spawnpos
+	get_tree().current_scene.get_node("Frisk").position = spawnpos
