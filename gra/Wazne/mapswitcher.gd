@@ -42,4 +42,6 @@ func _deferred_goto_scene(path, point):
 	
 	var spawnpos = get_tree().current_scene.get_node("spawns").get_node(point).position
 	
-	get_tree().current_scene.get_node("Frisk").position = spawnpos
+	var gracz_node = get_tree().current_scene.get_node("Frisk")
+	gracz_node.position = spawnpos
+	gracz_node.po_wejsciu = 8
