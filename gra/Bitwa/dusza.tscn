@@ -5,6 +5,7 @@
 
 [node name="Dusza" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
+collision_layer = 3
 motion_mode = 1
 script = ExtResource("1_137ax")
 

@@ -12,4 +12,8 @@ func _ready():
 
 func _physics_process(_delta):
 	position += predkosc
-	
+	var kolizja = move_and_collide(Vector2(0, 0), true)
+	if !kolizja: return
+	var dusza = kolizja.get_collider()
+	if not dusza is Dusza: return
+	dusza.damage(1)

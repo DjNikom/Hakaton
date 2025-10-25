@@ -1,3 +1,4 @@
+class_name Bitwa
 extends Node2D
 
 var tekstboks: Tekstboks
@@ -8,6 +9,7 @@ var graczhp: Label
 var przyciski: Node2D
 
 var efekty: Array[Sprite2D] = []
+var dzwieki: Dictionary[String, AudioStreamPlayer] = {}
 
 var wrogowie: Dane_Wrogowie
 
@@ -34,11 +36,15 @@ func _ready():
 	efekty.push_back(get_node("Efekt2"))
 	efekty.push_back(get_node("Efekt3"))
 	
+	dzwieki["damage"] = get_node("Dzwieki/Damage")
+	
 	wrogowie = load("res://Bitwa/Wrogowie/dane.gd").new()
 	wrog_data = wrogowie.dane[wrog_typ]
 	
 	wrog.get_node("AnimationPlayer").play("wrog_" + wrog_data["skin"])
 	dusza.visible = false
+	dusza.hp = gracz_data["hp"]
+	dusza.maxhp = gracz_data["maxhp"]
 	hud_aktualizacja()
 	
 	var ch = func():
@@ -126,7 +132,7 @@ func bitwa_koniecataku():
 	przyciski.visible = true
 
 func hud_aktualizacja():
-	graczhp.text = "HP: %d/%d" % [gracz_data["hp"], gracz_data["maxhp"]]
+	graczhp.text = "HP: %d/%d" % [dusza.hp, dusza.maxhp]
 
 var efekt_licznik: int = 0
 const EFEKT_CZAS = 60 * 4
