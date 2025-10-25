@@ -46,7 +46,7 @@ position = Vector2(571, 137)
 scale = Vector2(1.43, 1.43)
 texture = ExtResource("1_41wid")
 
-[node name="ButtonBitwaTest2" type="Button" parent="."]
+[node name="ButtonMapaTest" type="Button" parent="."]
 layout_mode = 0
 offset_left = 374.0
 offset_top = 326.0
@@ -56,3 +56,6 @@ theme = ExtResource("2_u7mro")
 text = "Mapa Test"
 script = ExtResource("5_2htrc")
 metadata/target = "res://Testy/mapa.tscn"
+
+[node name="Frisk" type="Node" parent="."]
+metadata/Movable = false
