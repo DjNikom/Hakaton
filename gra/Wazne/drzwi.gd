@@ -6,4 +6,4 @@ func _ready() -> void:
 
 func collision(body):
 	if body is Gracz:
-		mapswitcher.goto_scene(self.get_meta("target"), self.get_meta("targetpos"))
+		mapswitcher.goto_scene(self.get_meta("target"), self.get_meta("targetpos"), self.position)

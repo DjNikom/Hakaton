@@ -57,6 +57,7 @@ size = Vector2(160, 193.33333)
 [node name="Frisk" type="CharacterBody2D"]
 scale = Vector2(0.15, 0.15)
 script = ExtResource("1_h5h6g")
+metadata/movable = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.33332825, 4.25)
@@ -69,14 +70,6 @@ frame_progress = 0.65059805
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5894572e-06, 16.666664)
 shape = SubResource("RectangleShape2D_rlcjs")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -2553.3333
-offset_top = -1440.0
-offset_right = 2553.3333
-offset_bottom = 1433.3333
-color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.505, 1.505)

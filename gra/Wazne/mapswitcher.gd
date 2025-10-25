@@ -7,7 +7,7 @@ func _ready():
 	# Using a negative index counts from the end, so this gets the last child node of `root`.
 	current_scene = root.get_child(-1)
 	
-func goto_scene(path, point):
+func goto_scene(path, point, door):
 	# This function will usually be called from a signal callback,
 	# or some other function in the current scene.
 	# Deleting the current scene at this point is
@@ -17,10 +17,25 @@ func goto_scene(path, point):
 	# The solution is to defer the load to a later time, when
 	# we can be sure that no code from the current scene is running:
 
-	_deferred_goto_scene.call_deferred(path, point)
+	_deferred_goto_scene.call_deferred(path, point, door)
 
 
-func _deferred_goto_scene(path, point):
+func _deferred_goto_scene(path, point, door):
+	var transition = ResourceLoader.load("res://Wazne/transition.tscn")
+	current_scene.get_node("Frisk").add_child(transition.instantiate())
+	current_scene.get_node("Frisk").set_meta("movable", false)
+	var instancedTransition = current_scene.get_node("Frisk").get_node("Transition")
+	instancedTransition.name = "outTransition"
+	instancedTransition.color = Color(0, 0, 0, 0)
+	var tween = get_tree().create_tween()
+	tween.tween_property(instancedTransition, "color", Color(0, 0, 0, 255), 150)
+	if door:
+		var friskPos = current_scene.get_node("Frisk").position
+		current_scene.get_node("Frisk").constVel = (door-friskPos)*2.5
+	tween.tween_callback(instancedTransition.queue_free)
+	await get_tree().create_timer(0.75).timeout
+	
+	
 	var gracz = ResourceLoader.load("res://Postacie/Player/player.tscn")
 
 	# It is now safe to remove the current scene.
