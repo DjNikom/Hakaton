@@ -7,6 +7,9 @@ var dane = {
 		"skin": "smoke",
 		"hp": 100,
 		
+		"minobrazenia": 3,
+		"maxobrazenia": 7,
+		
 		"ataki": [
 			[
 				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 3.0]},
@@ -31,13 +34,18 @@ var dane = {
 	
 	"frog": {
 		"skin": "frog",
-		"hp": 100,
+		"hp": 10,
+		
+		"minobrazenia": 1,
+		"maxobrazenia": 1,
 		
 		"ataki": [
 			[
-				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0]},
-				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0, 1.0]},
-				{"opoznienie": 0, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0, -1.0]},
+				{"opoznienie": 1, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0]},
+				{"opoznienie": 1, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0]},
+				{"opoznienie": 1, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0]},
+				{"opoznienie": 1, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0]},
+				{"opoznienie": 1, "funkcja": atak_normalny, "parametry": [ATAK_PELLET, 2.0]},
 				{"opoznienie": 25, "funkcja": null}
 			]
 		],
@@ -71,5 +79,9 @@ func atak_normalny(wrog: WrogInfo, objekt: StringName, szybkosc: float = 1.0, ka
 	
 	var kierunek = (wrog.dusza.position - wrog.pozycja).normalized() * szybkosc
 	
+	var minobrazenia = wrog.dane["minobrazenia"]
+	var maxobrazenia = wrog.dane["maxobrazenia"]
+	
 	atak.predkosc = kierunek.rotated(kat_presuniecie)
 	atak.position = wrog.pozycja
+	atak.obrazenia = randi_range(minobrazenia, maxobrazenia)

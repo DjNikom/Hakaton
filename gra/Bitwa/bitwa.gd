@@ -135,7 +135,8 @@ func bitwa_gameover():
 	get_tree().change_scene_to_file("res://Bitwa/GameOver.tscn")
 
 func hud_aktualizacja():
-	graczhp.text = "HP: %d/%d" % [dusza.hp, dusza.maxhp]
+	var hp = dusza.hp if dusza.hp > 0 else 0
+	graczhp.text = "HP: %d/%d" % [hp, dusza.maxhp]
 
 var efekt_licznik: int = 0
 const EFEKT_CZAS = 60 * 4
