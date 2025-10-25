@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqc3huuadgddi"
-path="res://.godot/imported/dusza.png-3b123e80dee3f893cdc37b41dc9da442.ctex"
+uid="uid://1sl61wb2nnhy"
+path="res://.godot/imported/dusza_kawalek_lewy.png-c8e513c912345707c780474d6b5415de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bitwa/dusza.png"
-dest_files=["res://.godot/imported/dusza.png-3b123e80dee3f893cdc37b41dc9da442.ctex"]
+source_file="res://Bitwa/dusza_kawalek_lewy.png"
+dest_files=["res://.godot/imported/dusza_kawalek_lewy.png-c8e513c912345707c780474d6b5415de.ctex"]
 
 [params]
 

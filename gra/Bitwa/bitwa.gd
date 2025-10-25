@@ -1,22 +1,25 @@
+class_name Bitwa
 extends Node2D
 
 var tekstboks: Tekstboks
-var dusza
+var dusza: Dusza
 var wrog: Sprite2D
 var clickhandler
 var graczhp: Label
 var przyciski: Node2D
 
 var efekty: Array[Sprite2D] = []
+var dzwieki: Dictionary[String, AudioStreamPlayer] = {}
 
 var wrogowie: Dane_Wrogowie
 
 var gracz_data = {
 	"hp": 20,
-	"maxhp": 20
+	"maxhp": 20,
+	"mode": 0
 }
 
-var wrog_typ: String = "frog"
+var wrog_typ: String = "smoke"
 var wrog_data: Dictionary = {}
 
 func _ready():
@@ -33,11 +36,15 @@ func _ready():
 	efekty.push_back(get_node("Efekt2"))
 	efekty.push_back(get_node("Efekt3"))
 	
+	dzwieki["damage"] = get_node("Dzwieki/Damage")
+	
 	wrogowie = load("res://Bitwa/Wrogowie/dane.gd").new()
 	wrog_data = wrogowie.dane[wrog_typ]
 	
 	wrog.get_node("AnimationPlayer").play("wrog_" + wrog_data["skin"])
 	dusza.visible = false
+	dusza.hp = gracz_data["hp"]
+	dusza.maxhp = gracz_data["maxhp"]
 	hud_aktualizacja()
 	
 	var ch = func():
@@ -70,6 +77,7 @@ func _ready():
 
 func bitwa_start():
 	dusza.visible = true
+	dusza.mode = gracz_data["mode"]
 	
 	for c: BitwaBtn in przyciski.get_children():
 		c.bitwabtn_wcisniety.connect(bitwa_btn)
@@ -107,7 +115,10 @@ func bitwa_btnwalka():
 			var f = stan["funkcja"]
 			atak_opoznienie = stan["opoznienie"]
 			atak_stan += 1
-			if f: f.callv(stan["parametry"])
+			if f:
+				var parametry = [wrogowie.WrogInfo.new(wrog_data, wrog, wrog.get_node("AnimationPlayer"), dusza)]
+				parametry.append_array(stan["parametry"])
+				f.callv(parametry)
 		atak_opoznienie -= 1
 	
 	timer.wait_time = 0.1
@@ -120,8 +131,11 @@ func bitwa_koniecataku():
 	print("Koniec ataku")
 	przyciski.visible = true
 
+func bitwa_gameover():
+	get_tree().change_scene_to_file("res://Bitwa/GameOver.tscn")
+
 func hud_aktualizacja():
-	graczhp.text = "HP: %d/%d" % [gracz_data["hp"], gracz_data["maxhp"]]
+	graczhp.text = "HP: %d/%d" % [dusza.hp, dusza.maxhp]
 
 var efekt_licznik: int = 0
 const EFEKT_CZAS = 60 * 4
