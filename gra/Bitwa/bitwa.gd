@@ -2,7 +2,7 @@ class_name Bitwa
 extends Node2D
 
 var tekstboks: Tekstboks
-var dusza
+var dusza: Dusza
 var wrog: Sprite2D
 var clickhandler
 var graczhp: Label
@@ -130,6 +130,9 @@ func bitwa_btnwalka():
 func bitwa_koniecataku():
 	print("Koniec ataku")
 	przyciski.visible = true
+
+func bitwa_gameover():
+	get_tree().change_scene_to_file("res://Bitwa/GameOver.tscn")
 
 func hud_aktualizacja():
 	graczhp.text = "HP: %d/%d" % [dusza.hp, dusza.maxhp]

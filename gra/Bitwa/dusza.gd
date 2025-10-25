@@ -1,16 +1,29 @@
 class_name Dusza
 extends CharacterBody2D
 
+@export var fejdaut: float = 1.0
+@export var gameover: bool = false
+
 var speed_mul: float = 1
+
+var animator: AnimationPlayer
+var bitwa: Bitwa
 
 const SPEED = 300.0
 
+func _ready():
+	bitwa = get_parent()
+	animator = get_node("AnimationPlayer")
+
 func damage(obrazenia: int):
-	var bitwa: Bitwa = get_parent()
-	
-	niewrazliwosc = 120
 	hp -= obrazenia
 	bitwa.hud_aktualizacja()
+	if hp <= 0:
+		self.collision_layer = 0
+		animator.play("gameover")
+		return
+	
+	niewrazliwosc = 120
 	bitwa.dzwieki["damage"].play()
 	self.collision_layer &= ~2
 
@@ -33,6 +46,12 @@ var mode = 0 #0 - red, 1 - yellow
 var niewrazliwosc = 0
 
 func _physics_process(_delta):
+	if gameover:
+		bitwa.bitwa_gameover()
+		return
+	if hp <= 0: 
+		bitwa.modulate = Color(fejdaut, fejdaut, fejdaut)
+		return
 	if niewrazliwosc > 0:
 		niewrazliwosc -= 1
 		if niewrazliwosc == 0:

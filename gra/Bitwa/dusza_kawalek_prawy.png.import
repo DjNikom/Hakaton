@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqc3huuadgddi"
-path="res://.godot/imported/duszamodulate.png-30acab6c9f5a0336b51ebbc4b1283be7.ctex"
+uid="uid://hnrpe2sdbcb3"
+path="res://.godot/imported/dusza_kawalek_prawy.png-a35fe707d4ba7920ac1eb74056831ab6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bitwa/duszamodulate.png"
-dest_files=["res://.godot/imported/duszamodulate.png-30acab6c9f5a0336b51ebbc4b1283be7.ctex"]
+source_file="res://Bitwa/dusza_kawalek_prawy.png"
+dest_files=["res://.godot/imported/dusza_kawalek_prawy.png-a35fe707d4ba7920ac1eb74056831ab6.ctex"]
 
 [params]
 
