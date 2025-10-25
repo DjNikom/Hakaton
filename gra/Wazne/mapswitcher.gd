@@ -1,9 +1,10 @@
 extends Node
 
-var current_scene = null
+var current_scene: Node
+var root: Window
 
 func _ready():
-	var root = get_tree().root
+	root = get_tree().root
 	# Using a negative index counts from the end, so this gets the last child node of `root`.
 	current_scene = root.get_child(-1)
 
@@ -16,6 +17,8 @@ func goto_scene(path, point, door):
 
 	# The solution is to defer the load to a later time, when
 	# we can be sure that no code from the current scene is running:
+
+	current_scene = root.get_child(-1)
 
 	_deferred_goto_scene.call_deferred(path, point, door)
 
