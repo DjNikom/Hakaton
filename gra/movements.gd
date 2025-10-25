@@ -9,18 +9,12 @@ var po_wejsciu = 0
 const SPEED = 150.0
 
 func _ready() -> void:
-	
-	#  CZEMU TO NIE DZIALA
 	var transition = ResourceLoader.load("res://Wazne/transition.tscn")
 	self.add_child(transition.instantiate())
 	var instancedTransition = self.get_node("Transition")
 	instancedTransition.name = "initTransition"
 	instancedTransition.color = Color(0, 0, 0, 255)
-	
-	var tween = get_tree().create_tween()
-	tween.tween_property(instancedTransition, "color", Color(0, 0, 0, 0), 150)
-	tween.tween_callback(instancedTransition.queue_free)
-	# </>
+	instancedTransition.get_node("fadein").play("fadein")
 	
 	set_meta("movable", false)
 	await get_tree().create_timer(0.3).timeout

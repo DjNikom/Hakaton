@@ -27,12 +27,10 @@ func _deferred_goto_scene(path, point, door):
 	var instancedTransition = current_scene.get_node("Frisk").get_node("Transition")
 	instancedTransition.name = "outTransition"
 	instancedTransition.color = Color(0, 0, 0, 0)
-	var tween = get_tree().create_tween()
-	tween.tween_property(instancedTransition, "color", Color(0, 0, 0, 255), 150)
+	instancedTransition.get_node("fadeout").play("fadeout")
 	if door:
 		var friskPos = current_scene.get_node("Frisk").position
 		current_scene.get_node("Frisk").constVel = (door-friskPos)*2.5
-	tween.tween_callback(instancedTransition.queue_free)
 	await get_tree().create_timer(0.75).timeout
 	
 	
