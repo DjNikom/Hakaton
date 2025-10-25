@@ -3,6 +3,7 @@ extends AnimatableBody2D
 
 @export var animator: AnimationPlayer
 @export var animacja: String = "ruch"
+@export var obrazenia: int = 1
 @export var predkosc: Vector2 = Vector2(0, 0)
 
 # Called when the node enters the scene tree for the first time.
@@ -16,4 +17,4 @@ func _physics_process(_delta):
 	if !kolizja: return
 	var dusza = kolizja.get_collider()
 	if not dusza is Dusza: return
-	dusza.damage(1)
+	dusza.damage(obrazenia)
