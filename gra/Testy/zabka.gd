@@ -1,9 +1,6 @@
 extends Node2D
 
-
-
-func _input(_event):
-	if Input.is_action_pressed("player_action"):
-		pass
-	#czekam na gracza, bo go tu chyba nie ma
+func _on_area_entered(area: Area2D) -> void:
+	
+		get_tree().change_scene_to_file("res://Bitwa/Bitwa.tscn")
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bkxkr2n8urg7r"]
+[gd_scene load_steps=21 format=3 uid="uid://bkxkr2n8urg7r"]
 
 [ext_resource type="Texture2D" uid="uid://dtc1tj6q3mocl" path="res://Assety/ruinsEntry.png" id="1_ndych"]
 [ext_resource type="Texture2D" uid="uid://b0ssp3om4yhkq" path="res://Bitwa/Wrogowie/frog.png" id="2_ndych"]
@@ -62,6 +62,9 @@ animations = [{
 "name": &"default",
 "speed": 1.5
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0dom"]
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndych"]
 size = Vector2(16, 16)
@@ -151,13 +154,23 @@ position = Vector2(151, 137)
 [node name="door0" type="Marker2D" parent="spawns"]
 position = Vector2(620, 179)
 
-[node name="zabka" type="Node2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(264, 142)
+scale = Vector2(2, 2)
 script = ExtResource("2_q0dom")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="zabka"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_6krpu")
 frame_progress = 0.5403123
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="zabka"]
+[node name="RigidBody2D" type="RigidBody2D" parent="Area2D/AnimatedSprite2D"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/AnimatedSprite2D/RigidBody2D"]
+shape = SubResource("RectangleShape2D_q0dom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_ndych")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
