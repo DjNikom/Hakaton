@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0353bse3vquh"]
+[gd_scene load_steps=21 format=3 uid="uid://d0353bse3vquh"]
 
 [ext_resource type="Texture2D" uid="uid://dtc1tj6q3mocl" path="res://Assety/ruinsEntry.png" id="1_ndych"]
 [ext_resource type="PackedScene" uid="uid://dmf5s7uywfivi" path="res://Wazne/drzwi.tscn" id="2_ndych"]
+[ext_resource type="Texture2D" uid="uid://b0ssp3om4yhkq" path="res://Bitwa/Wrogowie/frog.png" id="2_ndych"]
+[ext_resource type="Script" uid="uid://difkve7fs1wat" path="res://Testy/zabka.gd" id="2_q0dom"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ntaof"]
 
@@ -40,6 +42,37 @@ size = Vector2(37, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cj0ms"]
 size = Vector2(46, 9)
 
+<<<<<<< HEAD
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tt5s"]
+size = Vector2(45.25, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0dom"]
+atlas = ExtResource("2_ndych")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntaof"]
+atlas = ExtResource("2_ndych")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6krpu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0dom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntaof")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndych"]
+size = Vector2(16, 16)
+
+>>>>>>> 34a2b79 (dodałem zabke na mapie)
 [node name="Mapa" type="Node2D"]
 
 [node name="RuinsEntry" type="Sprite2D" parent="."]
@@ -114,3 +147,14 @@ position = Vector2(151, 137)
 
 [node name="door0" type="Marker2D" parent="spawns"]
 position = Vector2(620, 179)
+
+[node name="zabka" type="Node2D" parent="."]
+position = Vector2(264, 142)
+script = ExtResource("2_q0dom")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="zabka"]
+sprite_frames = SubResource("SpriteFrames_6krpu")
+frame_progress = 0.5403123
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zabka"]
+shape = SubResource("RectangleShape2D_ndych")
