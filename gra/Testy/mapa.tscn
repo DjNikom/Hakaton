@@ -1,7 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0353bse3vquh"]
+[gd_scene load_steps=20 format=3 uid="uid://bkxkr2n8urg7r"]
 
 [ext_resource type="Texture2D" uid="uid://dtc1tj6q3mocl" path="res://Assety/ruinsEntry.png" id="1_ndych"]
-[ext_resource type="PackedScene" uid="uid://dmf5s7uywfivi" path="res://Wazne/drzwi.tscn" id="2_ndych"]
 [ext_resource type="Texture2D" uid="uid://b0ssp3om4yhkq" path="res://Bitwa/Wrogowie/frog.png" id="2_ndych"]
 [ext_resource type="Script" uid="uid://difkve7fs1wat" path="res://Testy/zabka.gd" id="2_q0dom"]
 
@@ -42,11 +41,6 @@ size = Vector2(37, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cj0ms"]
 size = Vector2(46, 9)
 
-<<<<<<< HEAD
-=======
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tt5s"]
-size = Vector2(45.25, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0dom"]
 atlas = ExtResource("2_ndych")
 region = Rect2(0, 0, 16, 16)
@@ -72,7 +66,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndych"]
 size = Vector2(16, 16)
 
->>>>>>> 34a2b79 (dodałem zabke na mapie)
 [node name="Mapa" type="Node2D"]
 
 [node name="RuinsEntry" type="Sprite2D" parent="."]
@@ -135,9 +128,19 @@ shape = SubResource("RectangleShape2D_lkm3l")
 position = Vector2(619, 105.5)
 shape = SubResource("RectangleShape2D_cj0ms")
 
-[node name="Drzwi" parent="." instance=ExtResource("2_ndych")]
+[node name="Drzwi" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(618, 134)
 scale = Vector2(1.126417, 1.2577113)
+script = null
 metadata/target = "res://Testy/mapa2.tscn"
 
 [node name="spawns" type="Node" parent="."]
